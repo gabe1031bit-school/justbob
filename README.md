@@ -28,7 +28,7 @@ To login, use this command, `firebase login`.
 
 To initialize the folder for Firebase, use this command `firebase init`.
 
-Make sure to choose `Hosting`, then `Create A New Project` _name it justbob-gvhc-[whatever you want after this]_, then `.`, then `n` to the rest of the questions.
+Make sure to choose `Hosting`, then `Create A New Project` (_name it justbob-gvhc-[whatever you want after this]_), then `.`, then `n` to the rest of the questions.
 
 ### 6 Deploy!
 
