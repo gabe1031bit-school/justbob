@@ -1,0 +1,12 @@
+img {
+    max-width: 500px;
+    max-height: 500px;
+    width: 250px;
+    height: 250px;
+}
+
+body {
+    background-color: lightblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
