@@ -26,7 +26,7 @@ function bobHungry() {
     bobTip.textContent = "Tip: feed him! click on the button below to feed."
     bobUIState.src = "/src/bob/4.png"
 
-    console.log("set BOB to NORMAL.")
+    console.log("set BOB to HUNGRY.")
 } 
 
 function bobHappy() {
@@ -52,19 +52,26 @@ async function main() {
     startBob();
     await wait(2000);
     bobNormal();
+    while(true) {
+        if (bobState === 1) {
+            await wait(50000);
+            bobSad();
+        } else if (bobState === -1){
+            bobNormal();
+            await wait(100)
+        } else {
+            bobHungry(); 
+        }
+        await wait(11000)
 
-    if (bobState === 1) {
-        await wait(50000);
-        bobSad();
-    } else if (bobState === -1){
-        bobNormal();
-    }     
+        
+    }
 }
 
 async function pressEntertain() {
     await wait(5000);
     bobHappy();
-    let bobState = 2
+    bobState = 2
     await wait(60000);
     bobNormal();
     bobState = 1
@@ -73,7 +80,7 @@ async function pressEntertain() {
 async function pressFeast() {
     await wait(5000);
     bobHappy();
-    let bobState = 2;
+    bobState = 2;
     await wait(120000);
     bobHungry();
     bobState = 3
@@ -82,16 +89,16 @@ async function pressFeast() {
 async function pressSadMovie() {
     await wait(5000);
     bobSad();
-    let bobState = -1
+    bobState = -1
     await wait(5000);
     bobNormal();
     bobState = 1
 }
 
 const startTime = Date.now();
+const bobAge = document.getElementById("bobAge")
 
 setInterval(() => {
-    const bobAge = document.getElementById("bobAge")
     const elapsedMs = Date.now() - startTime;
     const totalSeconds = Math.floor(elapsedMs / 1000);
 
