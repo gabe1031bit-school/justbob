@@ -29,25 +29,46 @@ function bobHungry() {
     console.log("set BOB to NORMAL.")
 } 
 
-function bobNormal() {
-    bobIs.textContent = "bob is NORMAL."
-    bobTip.textContent = "Tip: do nothing, for now. he is perfectly fine!"
-    bobUIState.src = "/src/bob/1.png"
+function bobHappy() {
+    bobIs.textContent = "bob is HAPPY!"
+    bobTip.textContent = "Tip: do nothing, he is cool!"
+    bobUIState.src = "/src/bob/2.png"
 
-    console.log("set BOB to NORMAL.")
+    console.log("set BOB to HAPPY.")
 }  
 
-function bobNormal() {
-    bobIs.textContent = "bob is NORMAL."
-    bobTip.textContent = "Tip: do nothing, for now. he is perfectly fine!"
-    bobUIState.src = "/src/bob/1.png"
+function bobSad() {
+    bobIs.textContent = "bob is SAD. :("
+    bobTip.textContent = "Tip: click on the entertain button below this text!"
+    bobUIState.src = "/src/bob/3.png"
 
-    console.log("set BOB to NORMAL.")
+    console.log("set BOB to SAD.")
 } 
 
 async function main() {
     startBob();
     await wait(2000);
+    bobNormal();      
+}
+
+async function pressEntertain() {
+    await wait(5000);
+    bobHappy();
+    await wait(60000);
+    bobNormal();
+}
+
+async function pressFeast() {
+    await wait(5000);
+    bobNormal();
+    await wait(120000);
+    bobHungry();
+}
+
+async function pressSadMovie() {
+    await wait(5000);
+    bobSad();
+    await wait(5000);
     bobNormal();
 }
 
