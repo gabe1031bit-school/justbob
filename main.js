@@ -84,7 +84,7 @@ setInterval(() => {
     const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
     const seconds = String(totalSeconds % 60).padStart(2, "0");
 
-    bobAge.textContent = bobAge + `${days}:${hours}:${minutes}:${seconds}`;
+    bobAge.textContent = bobAge + `${days}:${hours}:${minutes}:${seconds}` + " old.";
 }, 1000);
 
 main();
