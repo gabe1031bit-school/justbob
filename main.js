@@ -46,30 +46,46 @@ function bobSad() {
 } 
 
 async function main() {
+
+    let bobState = 1;
+
     startBob();
     await wait(2000);
-    bobNormal();      
+    bobNormal();
+
+    if (bobState === 1) {
+        await wait(50000);
+        bobSad();
+    } else if (bobState === -1){
+        bobNormal();
+    }     
 }
 
 async function pressEntertain() {
     await wait(5000);
     bobHappy();
+    let bobState = 2
     await wait(60000);
     bobNormal();
+    bobState = 1
 }
 
 async function pressFeast() {
     await wait(5000);
-    bobNormal();
+    bobHappy();
+    let bobState = 2;
     await wait(120000);
     bobHungry();
+    bobState = 3
 }
 
 async function pressSadMovie() {
     await wait(5000);
     bobSad();
+    let bobState = -1
     await wait(5000);
     bobNormal();
+    bobState = 1
 }
 
 const startTime = Date.now();
