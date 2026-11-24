@@ -72,4 +72,19 @@ async function pressSadMovie() {
     bobNormal();
 }
 
+const startTime = Date.now();
+
+setInterval(() => {
+    const bobAge = document.getElementById("bobAge")
+    const elapsedMs = Date.now() - startTime;
+    const totalSeconds = Math.floor(elapsedMs / 1000);
+    
+    const days = String(Math.floor(totalSeconds / 86400)).padStart(2, "0");
+    const hours = String(Math.floor(totalSeconds / 3600)).padStart(2, "0");
+    const minutes = String(Math.floor((totalSeconds % 3600) / 60)).padStart(2, "0");
+    const seconds = String(totalSeconds % 60).padStart(2, "0");
+
+    bobAge.textContent = `${hours}:${minutes}:${seconds}`;
+}, 1000);
+
 main();
