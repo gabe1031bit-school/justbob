@@ -33,3 +33,9 @@ Make sure to choose `Hosting`, then `Create A New Project` (_name it justbob-gvh
 ### 6 Deploy!
 
 To deploy, just use the command `firebase deploy`. That's it. Enjoy **Just Bob**!
+
+--
+
+## background info :)
+
+coming soon rq, fixing bugs rn
